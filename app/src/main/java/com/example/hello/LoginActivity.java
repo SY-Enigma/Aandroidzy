@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this,"用户名或密码不能为空",Toast.LENGTH_SHORT).show();
             }else if (username.equals("admin") && password.equals("123456")){
                 //成功后将username传递个限一个activity界面
-                final Intent intent = new Intent(LoginActivity.this,InformationActivity.class);
+                final Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                 intent.putExtra("username",username);
                 //跳转到另外一个界面
                 startActivity(intent);

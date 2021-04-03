@@ -1,57 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".MainActivity">
+    android:background="#abcabc"
+    android:orientation="vertical">
 
-    
-    <LinearLayout
-        android:layout_margin="8dp"
-        android:orientation="horizontal"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content">
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
         <TextView
-            android:layout_weight="1"
-            android:layout_width="0dp"
+            android:id="@+id/tv_header"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="用户名" />
-        <EditText
-            android:layout_weight="5"
-            android:layout_width="0dp"
-            android:hint="请输入用户名"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:text="选择通知样式:"
+            android:textSize="18sp" />
 
-    <LinearLayout
-        android:layout_margin="8dp"
-        android:orientation="horizontal"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content">
+        <Spinner
+            android:id="@+id/sp_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:dropDownVerticalOffset="56dp"
+            android:paddingTop="24dp"
+            android:spinnerMode="dropdown" />
+
         <TextView
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="密  码:"
-            />
-        <EditText
-            android:layout_weight="5"
-            android:layout_width="0dp"
-            android:hint="请输入密码"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <Button
-        android:id="@+id/btn_login"
-        android:text="登录"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        />
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="160dp"
+            android:padding="16dp"
+            android:textSize="20sp"
+            android:text="通知文本描述"
+            android:textColor="@android:color/holo_purple"/>
+</LinearLayout>
+
+
+    </FrameLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:id="@+id/bottomPanel"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal">
 
+        <LinearLayout
+            android:id="@+id/info"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_home"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/xx" />
+
+            <TextView
+                android:id="@+id/tv_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="消息"
+                android:textColor="#ff7700"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/contacts"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_live"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/lxr" />
+
+            <TextView
+                android:id="@+id/tv_live"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="联系人"
+                android:textColor="#aaaaaa" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/watch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_follow"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/kd" />
+
+            <TextView
+                android:id="@+id/tv_follow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="看点"
+                android:textColor="#aaaaaa" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/my"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_discover"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/wd" />
+
+            <TextView
+                android:id="@+id/tv_discover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="我的"
+                android:textColor="#aaaaaa" />
+        </LinearLayout>
+
+
+    </LinearLayout>
 </LinearLayout>
