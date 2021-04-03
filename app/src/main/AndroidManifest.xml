@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hello">
-        <activity android:name=".DemoActivity"></activity>
+        <activity android:name=".ViewBindingActivity"></activity>
         <activity android:name=".InformationActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>

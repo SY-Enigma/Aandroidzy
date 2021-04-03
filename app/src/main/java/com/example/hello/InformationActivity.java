@@ -1,7 +1,5 @@
 package com.example.hello;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,8 +9,11 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
@@ -29,13 +30,14 @@ public class InformationActivity extends AppCompatActivity implements View.OnCli
 
     //
     private  String selected = "";
-
+    private CheckBox cbAndroid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information);
 
+        // 初始化布局对象，作为Snackbar的上下文
         mainLayout =findViewById(R.id.ll_main);
         phoneLayout = findViewById(R.id.phone_layout);
 
@@ -58,6 +60,7 @@ public class InformationActivity extends AppCompatActivity implements View.OnCli
         cbCh2.setOnCheckedChangeListener(this);
         cbCh3.setOnCheckedChangeListener(this);
         cbCh4.setOnCheckedChangeListener(this);
+        btnLogin1.setOnClickListener(this);
 
         //获取传递的值
         final Intent intent = getIntent();
@@ -92,11 +95,16 @@ public class InformationActivity extends AppCompatActivity implements View.OnCli
             etPhone.requestFocus();
             return;
         }
-        String sex = "男";
+
         int id = rgSex.getCheckedRadioButtonId();
-        if (id == R.id.sex){
-            sex = "女";
-        }
+        RadioButton btn = findViewById(id);
+        String sex = btn.getText().toString();
+
+//        String sex = "男";
+//        int id = rgSex.getCheckedRadioButtonId();
+//        if (id == R.id.sex){
+//            sex = "女";
+//        }
 
         //将数据组合成字符串
         String info = "用户名:" + name + ", 手机号 :" + phone + ",性别 :" + sex +"\n喜欢的课程:" + selected;

@@ -1,17 +1,16 @@
 package com.example.hello;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText etUsername;
@@ -38,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
             //3.2 判断用户名、密码是否正确，根据判断结果进行处理，成功则跳转，错误给出提示
             if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)){
                 Toast.makeText(LoginActivity.this,"用户名或密码不能为空",Toast.LENGTH_SHORT).show();
-            }else if (username.equals("android") && password.equals("123456")){
+            }else if (username.equals("admin") && password.equals("123456")){
                 //成功后将username传递个限一个activity界面
                 final Intent intent = new Intent(LoginActivity.this,InformationActivity.class);
                 intent.putExtra("username",username);
