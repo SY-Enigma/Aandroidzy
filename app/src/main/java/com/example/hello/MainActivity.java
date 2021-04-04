@@ -19,6 +19,10 @@ import androidx.core.app.NotificationCompat;
 import com.example.hello.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener,View.OnClickListener{
+//    private TextView et_tv_contacts;
+
+
+
     private  static  final String ID_BASIC = "basic";
     private  static  final  String ID_HIGH  = "high";
     private ActivityMainBinding binding;
@@ -28,6 +32,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        et_tv_contacts=findViewById(R.id.tv_contacts);
+//        et_tv_contacts.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View root = binding.getRoot();
         setContentView(root);
@@ -77,8 +90,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //
         final Notification notification = new NotificationCompat.Builder(this , ID_BASIC)
                 .setSmallIcon(R.drawable.ic_message)
-                .setContentTitle("会议时间")
-                .setContentText("研讨会于今天下午13:00开始")
+                .setContentTitle("QQ消息")
+                .setContentText("好友消息")
                 .setContentIntent(pendingIntent)
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.pic))
                 .build();

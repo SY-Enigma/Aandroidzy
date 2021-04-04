@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class LoginActivity extends AppCompatActivity {
     private EditText etUsername;
     private  EditText etPassword;
+
 
 
     @Override
@@ -25,6 +27,10 @@ public class LoginActivity extends AppCompatActivity {
         etUsername = findViewById(R.id.et_username);
         etPassword = findViewById(R.id.et_password);
         Button btnLogin = findViewById(R.id.btn_login);
+
+        TextView tv_register = findViewById(R.id.tv_register);
+        TextView tv_find_psw = findViewById(R.id.tv_find_psw);
+
         //2.监听登录按钮的点击事件
         btnLogin.setOnClickListener(v -> {
             //3.登录的业务逻辑处理
@@ -53,7 +59,22 @@ public class LoginActivity extends AppCompatActivity {
                 etPassword.requestFocus();
             }
         });
+//注册监听
+        tv_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+                startActivityForResult(intent,1);
+            }
+        });
 
+        //密码监听
+        tv_find_psw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this,LostFindActivity.class));
+            }
+        });
         etPassword.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
