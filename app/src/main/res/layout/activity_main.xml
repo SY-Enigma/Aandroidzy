@@ -10,44 +10,45 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
-            android:text="选择通知样式:"
-            android:textSize="18sp" />
+            <TextView
+                android:id="@+id/tv_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:text="选择通知样式:"
+                android:textSize="18sp" />
 
-        <Spinner
-            android:id="@+id/sp_style"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:dropDownVerticalOffset="56dp"
-            android:paddingTop="24dp"
-            android:spinnerMode="dropdown" />
+            <Spinner
+                android:id="@+id/sp_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:dropDownVerticalOffset="56dp"
+                android:paddingTop="24dp"
+                android:spinnerMode="dropdown" />
 
-        <TextView
-            android:id="@+id/tv_description"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="160dp"
-            android:padding="16dp"
-            android:textSize="20sp"
-            android:text="通知文本描述"
-            android:textColor="@android:color/holo_purple"/>
-</LinearLayout>
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="160dp"
+                android:layout_marginEnd="16dp"
+                android:padding="16dp"
+                android:text="通知文本描述"
+                android:textColor="@android:color/holo_purple"
+                android:textSize="20sp" />
+        </LinearLayout>
 
 
     </FrameLayout>
@@ -71,7 +72,7 @@
                 android:id="@+id/iv_home"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/xx" />
+                android:src="@drawable/info" />
 
             <TextView
                 android:id="@+id/tv_home"
@@ -97,7 +98,7 @@
                 android:id="@+id/iv_contacts"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/lxr" />
+                android:src="@drawable/contacts" />
 
             <TextView
                 android:id="@+id/tv_contacts"
@@ -121,7 +122,7 @@
                 android:id="@+id/iv_follow"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/kd" />
+                android:src="@drawable/watch" />
 
             <TextView
                 android:id="@+id/tv_follow"
@@ -134,7 +135,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/my"
+            android:id="@+id/dynamic"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -145,7 +146,7 @@
                 android:id="@+id/iv_discover"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/wd" />
+                android:src="@drawable/dynamic" />
 
             <TextView
                 android:id="@+id/tv_discover"
@@ -153,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:gravity="center"
-                android:text="我的"
+                android:text="动态"
                 android:textColor="#aaaaaa" />
         </LinearLayout>
 

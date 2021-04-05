@@ -40,7 +40,7 @@
                 android:id="@+id/iv_home"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/xx" />
+                android:src="@drawable/info" />
 
             <TextView
                 android:id="@+id/tv_home"
@@ -66,7 +66,7 @@
                 android:id="@+id/iv_contacts"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/lxr" />
+                android:src="@drawable/contacts" />
 
             <TextView
                 android:id="@+id/tv_contacts"
@@ -91,7 +91,7 @@
                 android:id="@+id/iv_follow"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/kd" />
+                android:src="@drawable/dynamic" />
 
             <TextView
                 android:id="@+id/tv_follow"

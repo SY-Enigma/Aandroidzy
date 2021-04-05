@@ -9,8 +9,8 @@ import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,8 +18,13 @@ import androidx.core.app.NotificationCompat;
 
 import com.example.hello.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener,View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 //    private TextView et_tv_contacts;
+
+    private LinearLayout et_Info;
+    private  LinearLayout et_Contacts;
+    private  LinearLayout et_Watch;
+    private  LinearLayout et_Dynamic;
 
 
 
@@ -32,6 +37,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //初始化布局
+        et_Info =findViewById(R.id.info);
+        et_Contacts =  findViewById(R.id.contacts);
+        et_Watch =findViewById(R.id.watch);
+        et_Dynamic = findViewById(R.id.dynamic);
+
+        et_Dynamic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,RegisterActivity.class);
+                startActivityForResult(intent,1);
+            }
+        });
 
 //        et_tv_contacts=findViewById(R.id.tv_contacts);
 //        et_tv_contacts.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 //
 //            }
 //        });
+
+
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View root = binding.getRoot();
@@ -50,12 +70,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             createNotificationChannel(ID_BASIC,"一般消息", NotificationManager.IMPORTANCE_DEFAULT);
             createNotificationChannel(ID_HIGH,"订阅消息",NotificationManager.IMPORTANCE_HIGH);
         }
+        //调用基本样式的方法
+        showBasicNotification();
 
         //给Spinner控件设置数据适配器
         final ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,NOTIFICATION_STYLES);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         binding.spStyle.setAdapter(adapter);
-        binding.spStyle.setOnItemSelectedListener(this);
+//        binding.spStyle.setOnItemSelectedListener(this);
 
     }
 
@@ -65,23 +87,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         manager.createNotificationChannel(channel);
     }
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        //实现方法
-        String style = NOTIFICATION_STYLES[position];
-        binding.tvDescription.setText(style);
-        if("基本样式".equals(style)){
-            showBasicNotification();
-        }
-
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
+//
+//    @Override
+//    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//        //实现方法
+//        String style = NOTIFICATION_STYLES[position];
+//        binding.tvDescription.setText(style);
+//        if("基本样式".equals(style)){
+//
+//        }
+//
+//
+//    }
+//
+//    @Override
+//    public void onNothingSelected(AdapterView<?> parent) {
+//
+//    }
     //基本样式的方法
     public void  showBasicNotification(){
         final Intent intent = new Intent(this, MainActivity.class);
