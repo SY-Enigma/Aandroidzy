@@ -1,25 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#abcabc"
+    tools:context=".InfoActivity"
     android:orientation="vertical">
+
 
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
-        <TextView
-            android:id="@+id/tv_header"
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
-            android:text="选择通知样式:"
-            android:textSize="18sp" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edittext"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:background="#2196F3"
+                android:hint="搜索" />
+
+            <Button
+                android:id="@+id/serach"
+                android:layout_width="110dp"
+                android:layout_height="70dp"
+                android:drawableLeft="@drawable/search"
+                app:backgroundTint="#00BCD4" />
+        </LinearLayout>
+
+
     </FrameLayout>
+
 
     <LinearLayout
         android:id="@+id/bottomPanel"
@@ -76,7 +93,6 @@
                 android:gravity="center"
                 android:text="联系人"
                 android:textColor="#aaaaaa" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -91,7 +107,7 @@
                 android:id="@+id/iv_follow"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/dynamic" />
+                android:src="@drawable/watch" />
 
             <TextView
                 android:id="@+id/tv_follow"
@@ -104,7 +120,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/my"
+            android:id="@+id/dynamic"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -115,7 +131,7 @@
                 android:id="@+id/iv_discover"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/wd" />
+                android:src="@drawable/dynamic" />
 
             <TextView
                 android:id="@+id/tv_discover"
@@ -123,7 +139,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:gravity="center"
-                android:text="我的"
+                android:text="动态"
                 android:textColor="#aaaaaa" />
         </LinearLayout>
 

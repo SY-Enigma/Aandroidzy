@@ -10,7 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,13 +18,6 @@ import androidx.core.app.NotificationCompat;
 import com.example.hello.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-//    private TextView et_tv_contacts;
-
-    private LinearLayout et_Info;
-    private  LinearLayout et_Contacts;
-    private  LinearLayout et_Watch;
-    private  LinearLayout et_Dynamic;
-
 
 
     private  static  final String ID_BASIC = "basic";
@@ -37,30 +29,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //初始化布局
-        et_Info =findViewById(R.id.info);
-        et_Contacts =  findViewById(R.id.contacts);
-        et_Watch =findViewById(R.id.watch);
-        et_Dynamic = findViewById(R.id.dynamic);
-
-        et_Dynamic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,RegisterActivity.class);
-                startActivityForResult(intent,1);
-            }
-        });
-
-//        et_tv_contacts=findViewById(R.id.tv_contacts);
-//        et_tv_contacts.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
-
-
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View root = binding.getRoot();
         setContentView(root);
