@@ -2,8 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#abcabc"
     android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="#FFEB3B"
+        app:title="消息"
+
+        >
+
+    </androidx.appcompat.widget.Toolbar>
 
 
     <FrameLayout
@@ -69,27 +80,7 @@
                 android:textSize="20sp" />
         </LinearLayout>
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
-            android:layout_marginLeft="100dp">
-            <ImageView
-                android:id="@+id/imageView"
-                android:scaleType="centerCrop"
-                android:layout_width="200dp"
-                android:layout_height="250dp"
-                android:src="@drawable/frame_bg"  />
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="56dp"
-                android:text="苏洋"
-                android:textColor="@color/white"
-                android:textSize="30sp" />
-        </FrameLayout>
+
 
     </FrameLayout>
 

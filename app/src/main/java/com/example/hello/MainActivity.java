@@ -17,6 +17,8 @@ import androidx.core.app.NotificationCompat;
 
 import com.example.hello.databinding.ActivityMainBinding;
 
+//主界面的方法
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
 

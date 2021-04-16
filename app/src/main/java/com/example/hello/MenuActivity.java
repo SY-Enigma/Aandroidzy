@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hello.databinding.ActivityMainBinding;
 
+//菜单实现方法
+
 public class MenuActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
     private ActivityMainBinding binding;
     @Override

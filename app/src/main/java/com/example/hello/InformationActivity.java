@@ -21,6 +21,9 @@ import com.google.android.material.textfield.TextInputLayout;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
+//个人信息界面实现方法
+
 public class InformationActivity extends AppCompatActivity implements View.OnClickListener,CompoundButton.OnCheckedChangeListener {
     private EditText etName;
     private  EditText etPhone;

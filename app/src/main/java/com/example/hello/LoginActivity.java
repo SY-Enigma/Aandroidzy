@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
+//登录界面方法
 public class LoginActivity extends AppCompatActivity {
     private EditText etUsername;
     private  EditText etPassword;

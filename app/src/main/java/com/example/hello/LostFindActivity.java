@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//忘记密码
 public class LostFindActivity extends AppCompatActivity {
 
     @Override

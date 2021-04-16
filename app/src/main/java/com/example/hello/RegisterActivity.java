@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//注册界面方法
 public class RegisterActivity extends AppCompatActivity {
     private EditText et_name;
     private  EditText et_password;
